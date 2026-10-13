@@ -1,0 +1,55 @@
+<div class="page" [class.is-open]="opened()">
+  @if (!opened()) {
+  <main class="cover">
+    <h1 class="cover-title"><span>Baby shower</span><em>{{ details.baby }}</em></h1>
+    <div class="envelope">
+      <span class="letter"><span class="letter-label">CON MUCHO AMOR</span><span class="letter-name">Samuel</span><span class="letter-heart">♡</span></span>
+      <span class="envelope-back"></span><span class="envelope-fold"></span><span class="envelope-flap"></span><button type="button" class="seal" (click)="open()" aria-label="Abrir la invitación de Samuel tocando el sello">S<span>♡</span></button>
+    </div>
+    <img class="cover-balloon" src="assets/ositos/globo.png" alt="" aria-hidden="true"/>
+  </main>
+  } @else {
+  <main class="invitation" id="invitation">
+    <section class="invitation-card" aria-label="Invitación al baby shower de Samuel">
+      <div class="baby-art">
+        @if(details.image){
+          <div class="photo-keepsake">
+            <button class="baby-photo" (click)="showPhoto()" aria-label="Ver la foto de Samuel más grande">
+              <span class="photo-scene">
+                <span class="scene-cloud" aria-hidden="true"><img src="assets/ositos/nube.jpg" alt=""/></span>
+                <img class="scene-balloon" src="assets/ositos/globo.png" alt="" aria-hidden="true"/>
+                <img class="photo-bear-balloons" src="assets/ositos/8cf3d5380672020cc3323b5c78184954.png" alt="" aria-hidden="true"/>
+                <span class="photo-crop"><img [src]="details.image" alt="La primera fotito de Samuel en su ecografía"/></span>
+                <span class="photo-boy" aria-hidden="true"><img src="assets/ositos/descarga (2).png" alt=""/></span>
+              </span>
+              <span class="photo-caption">Nuestro amor a primera vista ♡</span>
+              <span class="photo-hint"><svg class="tap-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M11 14V7a2 2 0 0 1 4 0v6l1-1a2 2 0 0 1 3 1 2 2 0 0 1 3 2v4c0 4-2 6-6 6h-1c-2 0-3-1-4-2l-5-6a2 2 0 0 1 3-2l2 2v-3Z" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 7H4m4-4L6 1m11 2 2-2m-6 1V0" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg><span>Toca para conocer a Sami</span></span>
+            </button>
+          </div>
+        }
+      </div>
+      <div class="card-content">
+        <h1 class="script">Baby shower</h1><h2>{{ details.baby }}</h2>
+        <p class="card-intro">Ven a compartir con nosotros una tarde llena de alegría y juegos, esperando la llegada de nuestro bebé.</p>
+        <p class="comfortable-note">¡Trae ropa cómoda y muchas ganas de divertirte!</p>
+        <div class="event-summary">
+          <p class="event-date"><span>DOMINGO</span>{{ details.date }}</p>
+          <p class="event-pending">{{ details.time || 'Por la tarde · Hora por confirmar' }} <span>·</span> {{ details.venue || 'Lugar por confirmar' }}</p>
+          @if(details.address){<p class="event-address">{{ details.address }}</p>}
+          @if(details.address || details.venue){<button class="text-link" (click)="map()">Cómo llegar ↗</button>}
+        </div>
+        <p class="blessing">“Por este niño oraba, y Jehová me dio lo que le pedí.”<small class="verse-reference">1 Samuel 1:27</small></p>
+        @if(details.qr){<details class="gift-qr"><summary>Ver QR</summary><img [src]="details.qr" alt="QR para enviar un regalo a Samuel"/><a [href]="details.qr" download="regalito-para-Samuel.jpeg" class="text-link">Guardar QR ↓</a><small>Gracias por tu cariño.</small></details>} @else {<small class="qr-pending">Pronto compartiremos el QR aquí.</small>}
+        <div class="gift-note"><img class="gift-clothes" src="assets/ropita-sin-fondo.png" alt="" aria-hidden="true"/><div><h3>Un detalle para el bebé</h3><p>Todo regalito para nuestro bebé es bienvenido y lo recibiremos con mucho cariño. <br>  Si prefieres, también puedes hacerlo por QR.</p>
+        </div></div>
+        <div class="card-bottom"><span class="wordmark full-name">Samuel Gumiel Peñaranda<span>♡</span></span></div>
+      </div>
+    </section>
+    <dialog id="sami-photo" class="photo-dialog" aria-labelledby="photo-title" (click)="$event.target === $event.currentTarget && hidePhoto()">
+      <button type="button" class="photo-close" (click)="hidePhoto()" aria-label="Cerrar foto">×</button>
+      <h3 id="photo-title">Nuestro amor a primera vista ♡</h3>
+      <div class="photo-crop"><img [src]="details.image" alt="Fotito de Samuel"/></div>
+    </dialog>
+  </main>
+  }
+</div>
