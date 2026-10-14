@@ -38,7 +38,7 @@
           @if(details.address){<p class="event-address">{{ details.address }}</p>}
           @if(details.address || details.venue){<button class="text-link" (click)="map()">Cómo llegar ↗</button>}
         </div>
-        <p class="blessing">“Por este niño oraba, y Jehová me dio lo que le pedí.”<small class="verse-reference">1 Samuel 1:27</small></p>
+        <p class="blessing">“Este es el niño que yo le pedí al SEÑOR, y él me lo concedió.”<small class="verse-reference">1 Samuel 1:27</small></p>
         @if(details.qr){<details class="gift-qr"><summary>Ver QR</summary><img [src]="details.qr" alt="QR para enviar un regalo a Samuel"/><a [href]="details.qr" download="regalito-para-Samuel.jpeg" class="text-link">Guardar QR ↓</a><small>Gracias por tu cariño.</small></details>} @else {<small class="qr-pending">Pronto compartiremos el QR aquí.</small>}
         <div class="gift-note"><img class="gift-clothes" src="assets/ropita-sin-fondo.png" alt="" aria-hidden="true"/><div><h3>Un detalle para el bebé</h3><p>Todo regalito para nuestro bebé es bienvenido y lo recibiremos con mucho cariño. <br>  Si prefieres, también puedes hacerlo por QR.</p>
         </div></div>
