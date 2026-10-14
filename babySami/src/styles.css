@@ -18,16 +18,15 @@ em { color: var(--blue); }
 .page { min-height: 100svh; padding-bottom: 1px; }
 
 /* Portada. Solamente el sello abre el sobre. */
-.cover { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; max-width: 900px; min-height: calc(100svh - 44px); margin: 22px auto 0; padding: 55px 24px 35px; border: 1px solid #fff; border-radius: 30px; background: radial-gradient(ellipse at 50% 70%, #dceffc 0%, #f0f8fd 38%, #fffdf9 78%); box-shadow: 0 15px 60px #438bb622; z-index: 0; }
+.cover { position: relative; overflow: hidden; display: flex; align-items: center; flex-direction: column; text-align: center; max-width: 780px; margin: 24px auto; padding: 52px 28px 36px; border: 1px solid #d4e9f6; border-radius: 34px; background: radial-gradient(ellipse at 50% 64%, #e1f1fc, #fffdf9 72%); box-shadow: 0 15px 60px #438bb21a; }
 .cover-title { display: flex; flex-direction: column; gap: 10px; font-size: clamp(62px, 7vw, 88px); letter-spacing: -1px; }
 .cover-title > span { font-size: 34px; font-style: italic; font-weight: 400; color: var(--blue); letter-spacing: 0; }
 .cover-title > em { font-weight: 500; }
-.cover-balloon { position: absolute; right: 30px; top: 40px; width: 75px; height: 110px; object-fit: contain; opacity: .8; pointer-events: none; transform: rotate(12deg); }
-.cover-scene { position: relative; width: min(100%, 700px); aspect-ratio: 2 / 1.05; margin-top: 65px; }
-.cover-bear { position: absolute; width: 21%; aspect-ratio: 407 / 600; height: auto; left: 0; top: 1%; object-fit: contain; transform: rotate(-5deg); pointer-events: none; }
-.cover-boy { position: absolute; width: 26%; aspect-ratio: 1 / 1.2; right: 0; top: 37%; overflow: hidden; mix-blend-mode: multiply; pointer-events: none; }
+.cover-scene { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; align-items: start; width: min(100%, 390px); margin-top: 44px; }
+.cover-bear { position: relative; grid-column: 1; justify-self: end; width: 88px; aspect-ratio: 407 / 600; height: auto; object-fit: contain; pointer-events: none; }
+.cover-boy { position: relative; grid-column: 2; justify-self: start; width: 108px; aspect-ratio: 1 / 1.2; overflow: hidden; mix-blend-mode: multiply; pointer-events: none; }
 .cover-boy img { position: absolute; width: 100%; height: auto; left: 0; top: -31%; }
-.envelope { position: absolute; width: 52%; height: auto; aspect-ratio: 330 / 230; left: 24%; top: 12%; margin: 0; filter: drop-shadow(0 15px 20px #526b7b15); isolation: isolate; }
+.envelope { position: relative; grid-column: 1 / -1; justify-self: center; width: min(82%, 300px); height: auto; aspect-ratio: 330 / 230; margin: 0; filter: drop-shadow(0 12px 18px #526b7b15); isolation: isolate; }
 .envelope-back { position: absolute; inset: 0; background: #99c9e7; border-radius: 6px; z-index: -1; }
 .letter { position: absolute; left: 25px; right: 25px; top: -30px; height: 190px; display: flex; flex-direction: column; align-items: center; padding-top: 25px; background: #fffdf9; border-radius: 3px; transform: rotate(-4deg); transition: transform .65s; box-shadow: 0 0 0 1px #b99b7e22; }
 .letter-label { font-size: 8px; letter-spacing: 2.6px; font-weight: 500; color: var(--brown); }
@@ -36,7 +35,7 @@ em { color: var(--blue); }
 .envelope-fold { position: absolute; inset: 0; background: linear-gradient(125deg, #d3ebfb, #8ebfe0); clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%); border-radius: 6px; }
 .envelope-fold::after { content: ''; position: absolute; inset: 0; background: #b9dcf3; clip-path: polygon(0 100%, 50% 46%, 100% 100%); }
 .envelope-flap { position: absolute; inset: 0; background: #9dcbe8; clip-path: polygon(0 0, 100% 0, 50% 56%); transform-origin: top; transition: transform .6s; }
-.seal { position: absolute; left: calc(50% - 27px); top: 96px; width: 54px; height: 54px; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #69add6; color: #fff; border: 4px double #d9f0ff; font: italic 29px 'Cormorant Garamond', serif; box-shadow: 0 3px 9px #739bb224; transition: transform .2s, box-shadow .2s; }
+.seal { position: absolute; left: calc(50% - 27px); top: calc(50% - 27px); width: 54px; height: 54px; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #69add6; color: #fff; border: 4px double #d9f0ff; font: italic 29px "Cormorant Garamond", serif; box-shadow: 0 3px 9px #739bb224; transition: transform .2s, box-shadow .2s; }
 .seal span { font-size: 10px; margin-top: 8px; }
 .seal:hover { transform: scale(1.08); box-shadow: 0 5px 14px #55493f26; }
 .envelope:hover .letter, .envelope:focus-within .letter { transform: translateY(-15px) rotate(-4deg); }
@@ -107,15 +106,15 @@ img { max-width: 100%; height: auto; }
 @keyframes reveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 700px) {
   body { background-size: 440px auto; }
-  .cover { margin: 14px 12px 0; min-height: calc(100svh - 28px); padding: 50px 18px 30px; border-radius: 24px; }
-  .cover-title { font-size: 68px; }
-  .cover-title > span { font-size: 27px; }
-  .cover-balloon { width: 40px; height: 65px; right: 12px; top: 12px; opacity: .55; }
-  .cover-scene { aspect-ratio: 1 / .95; margin-top: 55px; }
-  .cover-bear { width: 25%; left: 0; top: auto; bottom: 0; }
-  .cover-boy { width: 28%; right: 0; top: auto; bottom: 0; }
-  .envelope { width: 82%; left: 9%; top: 7%; margin: 0; }
-  .seal { top: 80px; }
+  .cover { margin: 16px 12px; padding: 38px 18px 28px; border-radius: 28px; }
+  .cover-scene { margin-top: 36px; gap: 12px 14px; }
+  .cover-bear { width: 70px; }
+  .cover-boy { width: 88px; }
+  .cover-title { font-size: clamp(48px, 15vw, 64px); gap: 6px; }
+  .cover-title > span { font-size: 26px; }
+  .letter { left: 7%; right: 7%; top: -18px; height: 90%; padding-top: 14px; }
+  .letter-label { font-size: 7px; letter-spacing: 1.8px; }
+  .letter-name { font-size: 34px; margin-top: 6px; }
   .invitation { padding: 14px 12px; align-items: flex-start; }
   .invitation-card { grid-template-columns: 1fr; padding: 25px 20px; gap: 12px; position: relative; overflow: hidden; }
   .card-content { grid-row: 1; position: relative; }
