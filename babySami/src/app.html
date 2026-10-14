@@ -31,8 +31,8 @@
       <div class="card-content">
         <h1 class="script">Baby shower</h1><h2>{{ details.baby }}</h2>
         <p class="parents-names">Luis y Camila</p>
-        <p class="card-intro">Tenemos el agrado de invitarles a compartir una tarde llena de alegría y juegos, celebrando la próxima llegada de nuestro primogénito, Samuel.</p>
-        <p class="comfortable-note">¡Trae ropa cómoda y muchas ganas de divertirte!</p>
+        <p class="card-intro">Tienen el agrado de invitarle(s) a compartir una tarde llena de alegría y juegos, celebrando la próxima llegada de nuestro primogénito.</p>
+        <p class="comfortable-note">¡Trae ropa cómoda y muchas ganas para divertirte!</p>
         <div class="event-summary">
           <p class="event-date"><span>DOMINGO</span>{{ details.date }}</p>
           <p class="event-pending">{{ details.time || 'Por la tarde · Hora por confirmar' }} <span>·</span> {{ details.venue || 'Lugar por confirmar' }}</p>
@@ -41,7 +41,7 @@
         </div>
         <p class="blessing">“Este es el niño que yo le pedí al SEÑOR, y él me lo concedió.”<small class="verse-reference">1 Samuel 1:27</small></p>
         @if(details.qr){<details class="gift-qr"><summary>Ver QR</summary><img [src]="details.qr" alt="QR para enviar un regalo a Samuel"/><a [href]="details.qr" download="regalito-para-Samuel.jpeg" class="text-link">Guardar QR ↓</a><small>Gracias por tu cariño.</small></details>} @else {<small class="qr-pending">Pronto compartiremos el QR aquí.</small>}
-        <div class="gift-note"><img class="gift-clothes" src="assets/ropita-sin-fondo.png" alt="" aria-hidden="true"/><div><h3>Un detalle para el bebé</h3><p>Todo regalito para nuestro bebé es bienvenido y lo recibiremos con mucho cariño. <br>  Si prefieres, también puedes hacerlo por QR.</p>
+        <div class="gift-note"><img class="gift-clothes" src="assets/ropita-sin-fondo.png" alt="" aria-hidden="true"/><div><h3>Un detalle para el bebé</h3><p>Todo obsequio para nuestro bebé, será bienvenido y lo recibiremos con mucho cariño. <br>  Si prefieres, también puedes hacerlo por QR.</p>
         </div></div>
         <div class="card-bottom"><span class="wordmark full-name">Samuel Gumiel Peñaranda<span>♡</span></span></div>
       </div>
