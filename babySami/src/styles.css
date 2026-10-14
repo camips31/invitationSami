@@ -23,7 +23,11 @@ em { color: var(--blue); }
 .cover-title > span { font-size: 34px; font-style: italic; font-weight: 400; color: var(--blue); letter-spacing: 0; }
 .cover-title > em { font-weight: 500; }
 .cover-balloon { position: absolute; right: 30px; top: 40px; width: 75px; height: 110px; object-fit: contain; opacity: .8; pointer-events: none; transform: rotate(12deg); }
-.envelope { position: relative; width: 330px; height: 230px; margin: 66px 0 0; filter: drop-shadow(0 15px 20px #526b7b15); isolation: isolate; }
+.cover-scene { position: relative; width: min(100%, 700px); aspect-ratio: 2 / 1.05; margin-top: 65px; }
+.cover-bear { position: absolute; width: 21%; aspect-ratio: 407 / 600; height: auto; left: 0; top: 1%; object-fit: contain; transform: rotate(-5deg); pointer-events: none; }
+.cover-boy { position: absolute; width: 26%; aspect-ratio: 1 / 1.2; right: 0; top: 37%; overflow: hidden; mix-blend-mode: multiply; pointer-events: none; }
+.cover-boy img { position: absolute; width: 100%; height: auto; left: 0; top: -31%; }
+.envelope { position: absolute; width: 52%; height: auto; aspect-ratio: 330 / 230; left: 24%; top: 12%; margin: 0; filter: drop-shadow(0 15px 20px #526b7b15); isolation: isolate; }
 .envelope-back { position: absolute; inset: 0; background: #99c9e7; border-radius: 6px; z-index: -1; }
 .letter { position: absolute; left: 25px; right: 25px; top: -30px; height: 190px; display: flex; flex-direction: column; align-items: center; padding-top: 25px; background: #fffdf9; border-radius: 3px; transform: rotate(-4deg); transition: transform .65s; box-shadow: 0 0 0 1px #b99b7e22; }
 .letter-label { font-size: 8px; letter-spacing: 2.6px; font-weight: 500; color: var(--brown); }
@@ -101,14 +105,16 @@ img { max-width: 100%; height: auto; }
 .photo-dialog > p > span { font-size: 22px; }
 
 @keyframes reveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@media (min-width: 1500px) { .envelope { margin-top: 80px; } }
 @media (max-width: 700px) {
   body { background-size: 440px auto; }
   .cover { margin: 14px 12px 0; min-height: calc(100svh - 28px); padding: 50px 18px 30px; border-radius: 24px; }
   .cover-title { font-size: 68px; }
   .cover-title > span { font-size: 27px; }
   .cover-balloon { width: 40px; height: 65px; right: 12px; top: 12px; opacity: .55; }
-  .envelope { width: 285px; height: 200px; margin-top: 65px; }
+  .cover-scene { aspect-ratio: 1 / .95; margin-top: 55px; }
+  .cover-bear { width: 25%; left: 0; top: auto; bottom: 0; }
+  .cover-boy { width: 28%; right: 0; top: auto; bottom: 0; }
+  .envelope { width: 82%; left: 9%; top: 7%; margin: 0; }
   .seal { top: 80px; }
   .invitation { padding: 14px 12px; align-items: flex-start; }
   .invitation-card { grid-template-columns: 1fr; padding: 25px 20px; gap: 12px; position: relative; overflow: hidden; }

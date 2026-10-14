@@ -2,9 +2,14 @@
   @if (!opened()) {
   <main class="cover">
     <h1 class="cover-title"><span>Baby shower</span><em>{{ details.baby }}</em></h1>
+    <div class="cover-scene">
     <div class="envelope">
       <span class="letter"><span class="letter-label">CON MUCHO AMOR</span><span class="letter-name">Samuel</span><span class="letter-heart">♡</span></span>
       <span class="envelope-back"></span><span class="envelope-fold"></span><span class="envelope-flap"></span><button type="button" class="seal" (click)="open()" aria-label="Abrir la invitación de Samuel tocando el sello">S<span>♡</span></button>
+    </div>
+
+    <img class="cover-bear" src="assets/ositos/8cf3d5380672020cc3323b5c78184954.png" alt="" aria-hidden="true"/>
+    <span class="cover-boy" aria-hidden="true"><img src="assets/ositos/descarga (2).png" alt=""/></span>
     </div>
     <img class="cover-balloon" src="assets/ositos/globo.png" alt="" aria-hidden="true"/>
   </main>
