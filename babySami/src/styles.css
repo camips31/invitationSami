@@ -22,9 +22,10 @@ em { color: var(--blue); }
 .cover-title { display: flex; flex-direction: column; gap: 10px; font-size: clamp(62px, 7vw, 88px); letter-spacing: -1px; }
 .cover-title > span { font-size: 34px; font-style: italic; font-weight: 400; color: var(--blue); letter-spacing: 0; }
 .cover-title > em { font-weight: 500; }
-.cover-scene { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; align-items: start; width: min(100%, 390px); margin-top: 44px; }
+.cover-scene { position: relative; display: grid; grid-template-columns: 1fr 72px 1fr; gap: 14px 12px; align-items: start; width: min(100%, 390px); margin-top: 44px; }
 .cover-bear { position: relative; grid-column: 1; justify-self: end; width: 88px; aspect-ratio: 407 / 600; height: auto; object-fit: contain; pointer-events: none; }
-.cover-boy { position: relative; grid-column: 2; justify-self: start; width: 108px; aspect-ratio: 1 / 1.2; overflow: hidden; mix-blend-mode: multiply; pointer-events: none; }
+.cover-ball { position: relative; grid-column: 2; align-self: center; justify-self: center; width: 76px; aspect-ratio: 1; object-fit: contain; mix-blend-mode: multiply; pointer-events: none; }
+.cover-boy { position: relative; grid-column: 3; justify-self: start; width: 108px; aspect-ratio: 1 / 1.2; overflow: hidden; mix-blend-mode: multiply; pointer-events: none; }
 .cover-boy img { position: absolute; width: 100%; height: auto; left: 0; top: -31%; }
 .envelope { position: relative; grid-column: 1 / -1; justify-self: center; width: min(82%, 300px); height: auto; aspect-ratio: 330 / 230; margin: 0; filter: drop-shadow(0 12px 18px #526b7b15); isolation: isolate; }
 .envelope-back { position: absolute; inset: 0; background: #99c9e7; border-radius: 6px; z-index: -1; }
@@ -88,6 +89,7 @@ img { max-width: 100%; height: auto; }
 .photo-crop img { display: block; position: absolute; max-width: none; width: 250%; height: auto; left: -52%; top: -57%; }
 .baby-photo:hover .photo-crop { box-shadow: 0 0 0 1px #b9d5e5, 0 12px 32px #739bb226; }
 .photo-bear-balloons { position: absolute; width: 25%; aspect-ratio: 407 / 600; left: 2%; top: 35%; object-fit: contain; z-index: 3; transform: rotate(-6deg); pointer-events: none; }
+.photo-football { position: absolute; width: 23%; left: 38.5%; top: 73%; object-fit: contain; z-index: 1; mix-blend-mode: multiply; pointer-events: none; }
 .photo-boy { position: absolute; width: 26%; aspect-ratio: 1 / 1.5; right: 2%; top: 52%; overflow: hidden; pointer-events: none; z-index: 3; mix-blend-mode: multiply; }
 .photo-boy img { position: absolute; max-width: none; width: 110%; height: auto; top: -31%; left: -3%; }
 .photo-caption { position: relative; width: 100%; font: italic 22px/1.4 'Cormorant Garamond', serif; margin-top: 8px; color: var(--blue); }
@@ -107,7 +109,8 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 700px) {
   body { background-size: 440px auto; }
   .cover { margin: 16px 12px; padding: 38px 18px 28px; border-radius: 28px; }
-  .cover-scene { margin-top: 36px; gap: 12px 14px; }
+  .cover-scene { grid-template-columns: 1fr 58px 1fr; margin-top: 36px; gap: 12px 8px; }
+  .cover-ball { width: 64px; }
   .cover-bear { width: 70px; }
   .cover-boy { width: 88px; }
   .cover-title { font-size: clamp(48px, 15vw, 64px); gap: 6px; }
