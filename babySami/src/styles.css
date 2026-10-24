@@ -51,12 +51,21 @@ em { color: var(--blue); }
 .card-intro { font-size: 12px; line-height: 1.7; color: var(--muted); max-width: 370px; margin-inline: auto; }
 .parents-names { font: italic 28px/1.3 'Cormorant Garamond', serif; color: var(--blue); margin: 16px 0 9px; }
 .comfortable-note { font-size: 11px; line-height: 1.7; color: var(--blue); margin: 9px auto 0; max-width: 360px; }
-.event-summary { margin: 20px 0 18px; padding: 19px 14px; border-block: 1px solid #90c6e5; border-radius: 24px; background: linear-gradient(135deg, #d8edfb, #eef8ff); }
-.event-date { font: 600 30px 'Cormorant Garamond', serif; color: var(--blue); }
-.event-date > span { display: block; font: 500 9px 'DM Sans', sans-serif; letter-spacing: 2.5px; color: var(--muted); margin-bottom: 6px; }
-.event-pending, .event-address { font-size: 11px; line-height: 1.7; margin-top: 8px; color: var(--muted); }
-.event-pending > span { padding: 0 7px; color: var(--blue); }
-.event-summary .text-link { margin-top: 10px; }
+.event-summary { margin: 20px 0 18px; padding: 21px 16px; border: 1px solid #acd7f0; border-radius: 24px; background: linear-gradient(135deg, #d4ecfc, #f2f9fe); box-shadow: 0 8px 22px #438bb218; }
+.event-date { color: var(--blue); }
+.event-day { display: inline-flex !important; align-items: center; justify-content: center; gap: 7px; margin: 0 !important; font: 600 10px 'DM Sans', sans-serif !important; letter-spacing: 2px; text-transform: uppercase; color: #397da5 !important; }
+.event-day svg { width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.event-date-value { display: block; margin-top: 5px; color: #327fae; font: 600 34px/1.08 'Cormorant Garamond', serif; }
+.event-meta { display: grid; grid-template-columns: 1fr 1fr; max-width: 420px; margin: 17px auto 0; border-block: 1px solid #b7d9ec; background: #ffffff42; }
+.event-detail { display: flex; align-items: center; justify-content: center; gap: 10px; min-width: 0; margin: 0; padding: 12px 10px; color: #365b70; }
+.event-detail + .event-detail { border-left: 1px solid #b7d9ec; }
+.event-detail svg, .event-address svg { width: 21px; height: 21px; flex: 0 0 21px; stroke: #3485b3; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.event-detail-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; text-align: left; }
+.event-detail-copy small { color: #658294; font: 600 9px/1.2 'DM Sans', sans-serif; letter-spacing: 1.7px; }
+.event-detail-copy strong { color: #315a72; font: 600 16px/1.25 'DM Sans', sans-serif; }
+.event-address { display: flex; align-items: center; justify-content: center; gap: 7px; margin: 12px 0 0; padding-top: 10px; border-top: 1px solid #b8ddf1; color: #506a79; font: 500 12px/1.55 'DM Sans', sans-serif; }
+.event-summary .text-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 12px; font-weight: 600; }
+.event-summary .text-link svg { width: 15px; height: 15px; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .blessing { font: italic 21px/1.4 'Cormorant Garamond', serif; max-width: 400px; margin: 0 auto 18px; }
 .verse-reference { display: block; margin-top: 8px; font: 500 9px 'DM Sans', sans-serif; letter-spacing: 1.5px; color: var(--blue); }
 .gift-note { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 10px 12px 16px; gap: 8px; margin: 0 auto 20px; max-width: 370px; }
@@ -86,7 +95,7 @@ img { max-width: 100%; height: auto; }
 .scene-balloon { position: absolute; width: 16%; aspect-ratio: 329 / 437; right: 10%; top: 2%; object-fit: contain; transform: rotate(7deg); pointer-events: none; }
 .photo-crop { display: block; position: relative; width: 100%; aspect-ratio: 1.05; overflow: hidden; background: #f6eee5; border: 5px solid #e0f2ff; border-radius: 32% 28% 30% 25%; box-shadow: 0 0 0 2px #9ac8e4, 0 10px 30px #438bb622; }
 .photo-scene .photo-crop { position: absolute; width: 51%; left: 24.5%; top: 29%; z-index: 2; }
-.photo-crop img { display: block; position: absolute; max-width: none; width: 250%; height: auto; left: -52%; top: -57%; }
+.photo-crop img { display: block; position: absolute; max-width: none; width: 100%; height: 100%; left: 0; top: 0; object-fit: cover; object-position: center; transform: scale(1.18); transform-origin: center; }
 .baby-photo:hover .photo-crop { box-shadow: 0 0 0 1px #b9d5e5, 0 12px 32px #739bb226; }
 .photo-bear-balloons { position: absolute; width: 25%; aspect-ratio: 407 / 600; left: 2%; top: 35%; object-fit: contain; z-index: 3; transform: rotate(-6deg); pointer-events: none; }
 .photo-football { position: absolute; width: 23%; left: 38.5%; top: 73%; object-fit: contain; z-index: 1; mix-blend-mode: multiply; pointer-events: none; }
@@ -124,8 +133,13 @@ img { max-width: 100%; height: auto; }
   .card-content h1 { font-size: 28px; }
   .card-content h2 { font-size: 56px; letter-spacing: 3px; }
   .card-intro { font-size: 11px; }
-  .event-summary { margin: 16px 0; padding: 13px 8px; }
-  .event-date { font-size: 28px; }
+  .event-summary { margin: 16px 0; padding: 16px 10px; }
+  .event-date-value { font-size: 30px; }
+  .event-meta { margin-top: 13px; }
+  .event-detail { gap: 7px; padding: 10px 6px; }
+  .event-detail svg { width: 18px; height: 18px; flex-basis: 18px; }
+  .event-detail-copy strong { font-size: 14px; }
+  .event-address { font-size: 11px; }
   .blessing { font-size: 20px; margin-bottom: 16px; }
   .gift-note { padding-inline: 4px; }
   .gift-note h3 { font-size: 24px; }
